@@ -1,0 +1,117 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3825,        107]
+NotebookOptionsPosition[      3426,         92]
+NotebookOutlinePosition[      3872,        109]
+CellTagsIndexPosition[      3829,        106]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"enc", "[", "string_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"set", "=", 
+       RowBox[{"string", "~", "StringPartition", "~", "1"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"prime", "=", "2"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"i", "=", "1"}]}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"i", "\[LessEqual]", 
+        RowBox[{"Length", "@", "set"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"prime", "=", 
+         RowBox[{"NextPrime", "@", "prime"}]}], ";", 
+        RowBox[{
+         RowBox[{
+         "set", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "=", 
+         RowBox[{"prime", "^", 
+          RowBox[{
+           RowBox[{"ToCharacterCode", "[", 
+            RowBox[{
+            "set", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+            "]"}], "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"++", "i"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Times", "@@", "set"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dec", "[", "number_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"str", "=", "\"\<\>\""}], ",", "\[IndentingNewLine]", 
+      RowBox[{"prime", "=", "2"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"i", "=", "number"}], ",", "\[IndentingNewLine]", "pow"}], 
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"i", "\[NotEqual]", "1"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"prime", "=", 
+         RowBox[{"NextPrime", "@", "prime"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"pow", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"i", "~", "Mod", "~", "prime"}], "\[Equal]", "0"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"i", "/", "prime"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"++", "pow"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"str", "=", 
+         RowBox[{"str", "<>", 
+          RowBox[{"FromCharacterCode", "@", "pow"}]}]}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "str"}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8451171342523775`*^9, 
+  3.845117140236681*^9}},ExpressionUUID->"ec7d238d-7cf6-4682-a66f-\
+894b7f2f8155"]
+},
+WindowSize->{582.6, 501.59999999999997`},
+WindowMargins->{{279, Automatic}, {40.19999999999993, Automatic}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (2021\:5e747\:670823\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"887248f1-c353-4f30-b589-d27e83a258f0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2864, 70, 561, "Input",ExpressionUUID->"ec7d238d-7cf6-4682-a66f-894b7f2f8155"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
